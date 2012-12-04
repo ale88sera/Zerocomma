@@ -2,3 +2,8 @@
 #_internal:
 #    resource: "@FrameworkBundle/Resources/config/routing/internal.xml"
 #    prefix:   /_internal
+
+ZerocommaBackendBundle:
+    resource: "@ZerocommaBackendBundle/Controller/"
+    type:     annotation
+    prefix:   /backend

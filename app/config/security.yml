@@ -26,17 +26,19 @@ security:
             pattern:  ^/demo/secured/login$
             security: false
 
-        secured_area:
+        backend:
             pattern:    ^/backend/
             form_login:
                 check_path: /backend/login_check
                 login_path: /backend/login
+                always_use_default_target_path: true
+                default_target_path: /backend
             logout:
                 path:   /backend/logout
                 target: /backend/
-            #anonymous: ~
-            #http_basic:
-            #    realm: "Secured Demo Area"
+            anonymous: ~
+            http_basic:
+                realm: "Zerocomma Backend"
 
     access_control:
         #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
